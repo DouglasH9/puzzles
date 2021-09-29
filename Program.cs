@@ -15,13 +15,7 @@ namespace Puzzles
             // }
             // Problems.CoinToss();
             // Problems.TossMultiple(100);
-            List<string> Names = new List<string>();
-            Names.Add("Todd");
-            Names.Add("Tiffany");
-            Names.Add("Charlie");
-            Names.Add("Geneva");
-            Names.Add("Sydney");
-            
+            Console.WriteLine(Problems.Names());
         }
     }
 }

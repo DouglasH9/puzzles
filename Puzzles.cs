@@ -52,15 +52,38 @@ namespace Puzzles
             Console.WriteLine(headsRatio);
             return headsRatio;
         }
-        public static List Names(aList)
+        public static List<string> Names()
         {
-            Random rand = new Random();
-            List<string> newList = new List<string>();
-            foreach (string item in aList)
+            List<string> names = new List<string>()
             {
-                newList.Insert(rand.next(1,6), item);
+                "Todd", "Tiffany", "Charlie", "Geneva", "Sydney"
+            };
+            Random rand = new Random();
+
+            // List<string> newList = new List<string>();
+            for (int i = 0; i < names.Count/2; i++)
+            {
+                int randomIndex = rand.Next(names.Count);
+                string temp = names[randomIndex];
+                names[randomIndex] = names[i];
+                names[i] = temp;
             }
-            return newList;
+            foreach (string name in names)
+            {
+                Console.WriteLine(name);
+            }
+            for (int i = 0; i < names.Count; i++)
+            {
+                if (names[i].Length <= 5)
+                {
+                    names.RemoveAt(i);
+                }
+            }
+            foreach (string name in names)
+            {
+                Console.WriteLine(name);
+            }
+            return names;
         }
     }
 }
